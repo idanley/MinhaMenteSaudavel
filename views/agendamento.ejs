@@ -1,0 +1,86 @@
+<%- include('partials/header')%>
+<%- include('partials/navbar')%>
+<title>Agendamento</title>
+</head>
+<style>
+  body{
+    background-color: rgb(245, 240, 240);
+  }
+</style>
+<body>
+    <hr>
+
+    <div class="container ">
+        <div class="col-8" style="margin:10px auto;">
+            <form>
+                <div class="card">
+                    <div class="card-header" style="text-align: center; background-color: #b2e0cb;">
+                        <label for="data"><h4>Agende uma data para sua consulta</h4></label>
+                        <div class="row justify-content-center mt-1">
+                          <div class="col-7">
+                            <select class="form-select" name="medico" id="medico">
+                              <option value="psicologo">Psicólogo</option>
+                              <option value="psquiatra">Psiquiatra</option>
+                            </select>
+                            <input class="form-control text-center mt-1" type="date" name="data" id="dtAgenda" min="2021-04-01" required />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body" style="text-align: center; background-color: #b2e0cb;">
+                        <p style="color:#ff0000;">Agendamentos a partir da data abaixo:</p><div id="divDtFutura"></div>
+                        <hr>
+                        <div class="d-grid mx-auto col-6">
+                          <button onclick="agendamento()" class="btn btn-success">Agendar</button>
+                        </div>
+                      </div>
+                    <div style="background-color: #b2e0cb;">
+                      <a class="btn btn-dark btn-sm text-white m-3" href="/admin">Voltar</a>
+                    </div>          
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr>
+</body>
+<script>
+
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth() + 1; //Janeiro é 0, então somamos + 1 para trabalhar com calendário conhecido
+    let yyyy = today.getFullYear();
+    // Data de hoje mais 5 dias
+    dd = dd + 5;
+    //se for maior que dia 30 vai para o proximo mês
+    if(dd > 30){
+      dd = dd - 30;
+      mm = mm+1;
+    }
+    //se for maior que 12 vai para o proximo ano
+    if(mm > 12){
+      mm = 1;
+      yyyy = yyyy + 1;
+    }
+    // Se for menor que 10 formatamos com um zero na frente Ex: de 9 para 09
+    if(dd < 10){
+      dd = '0' + dd;
+    }
+    // Se for menor que 10 formatamos com um zero na frente Ex: de 9 para 09
+    if(mm < 10){
+      mm = '0' + mm;
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("dtAgenda").setAttribute("min", today);
+    today = dd + '/' + mm + '/' + yyyy;
+    let div = document.getElementById("divDtFutura");
+    div.innerText =  today ;
+
+    function agendamento() {
+        let medic = document.getElementById("medico").value
+        localStorage.setItem('Médico', medic)
+        let data = document.getElementById("dtAgenda").value
+        localStorage.setItem('Consulta', data)
+        alert(`Consulta agendada para: ${data} Tipo de Médico: ${medic}`)
+    }
+</script>
+</html>

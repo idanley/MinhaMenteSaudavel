@@ -1,0 +1,51 @@
+body {
+    background-color:#b2e0cb;
+}
+
+.div-father {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    box-shadow: 3px 6px 8px 3px rgb(131, 131, 131);      
+}
+
+.login {
+   margin-top: 50px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cadastre-se {
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+label {
+    margin: 3px;
+}
+
+.info-idoso {
+    display: flex;
+}
+
+.info {
+    margin: 5px;
+}
+#Senha{
+    height: 20px;
+    width: 30px;
+   
+
+}

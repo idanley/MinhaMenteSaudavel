@@ -1,0 +1,12 @@
+body {
+    background-color: #b2e0cb;
+}
+
+.col-9 {
+    margin-top: 20px;
+}
+.img {
+    display: flex;
+    justify-content: center;
+}
+
