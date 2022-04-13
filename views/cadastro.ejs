@@ -1,6 +1,8 @@
 <%- include('partials/header') %>
 <%- include('partials/navbar') %>
 <link rel="stylesheet" href="css/cadastro.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 <body>
     <div class="container col-9">
         <div id="iner" class="card card-header"> 
@@ -89,7 +91,7 @@
                     
                     <div class="col-md-4">
                       <label for="inputzip1" class="form-label">CPF</label>
-                      <input name="cpf" type="text" class="form-control" id="inputzip1">
+                      <input name="cpf" type="text" class="form-control" placeholder="000.000.000-00" id="inputzip1">
                     </div>
 
                     <div class="col-md-4">
@@ -146,6 +148,17 @@
         </div>
     </div>
     <hr>
+    <script type="text/javascript" src="/js/jquery.mask.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#inputzip1').mask('000.000.000-00', { reverse: true });
+        $('#inputAddress').mask('00000-000', { reverse: false });
+        $('#cnpj').mask('00.000.000/0000-00', { reverse: false });
+        $('#inputZip').mask('00000', { reverse: false });
+        $('#inputzip2').mask('00000', { reverse: false });
+        
+    });
+</script>
 </body>
 <script>
     
