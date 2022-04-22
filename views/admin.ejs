@@ -28,6 +28,12 @@
         <li class="nav-item">
           <a style="margin-left: 20px;" class="nav-link btn btn-dark btn-sm" href="/logout" tabindex="-1" aria-disabled="false"  style="font-weight: 600; color: aliceblue;">Sair</a>
         </li>
+        <li class="nav-item">
+          <a style="margin-left: 20px;" class="nav-link btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#sugestoes"  tabindex="-1" aria-disabled="false"  style="font-weight: 600; color: aliceblue;">Sugestões</a>
+        </li>
+        <li class="nav-item">
+          <a style="margin-left: 20px;" class="nav-link btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#Minhassugestoes"  tabindex="-1" aria-disabled="false"  style="font-weight: 600; color: aliceblue;"> Minhas Sugestões</a>
+        </li>
       </ul>
      
       <div class="text-white" style="width: 52%; display: flex; justify-content: flex-end; align-items: center;">
@@ -85,6 +91,61 @@
       </div>
     </section>
     <hr>
+
+      <!-- Modal Sugestoes do usuario-->
+    <div>
+      <div class="modal fade" id="sugestoes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <link rel="stylesheet" href="/css/admin.css">
+                      <h5 class="modal-title" id="exampleModalLabel ">Deixe suas sugestões ou Elogios</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                  <form action="/admin" method="post">
+                      <div class="row">
+                          <div class="col-md-8">
+                              <label id="label" class="info">Digite sua sugestão Aqui:</label><textarea
+                                  style="resize: none" maxlength="250" class="textarea" name="Sugestao" id=""
+                                  style="height: 100px;" class="modal-input form-control" type="text"></textarea>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="submit" type="button" class="btn btn-success btn-modal"
+                                  data-bs-dismiss="modal">Enviar</button>
+                              <a href="/admin">
+                                  <button type="button" class="btn btn-primary btn-modal">Voltar</button></a>
+                          </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+    <!-- Modal listSugetoes do usuario-->
+
+      <!-- Modal Minhas Sugestoes-->
+       <div>
+      <div class="modal fade" id="Minhassugestoes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <link rel="stylesheet" href="">
+                      <h5 class="modal-title" id="exampleModalLabel ">Suas sugestões e elogios</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="row">
+                          <div class="modal-footer">
+                              <a href="/admin">
+                                  <button type="button" class="btn btn-primary btn-modal">Voltar</button></a>
+                          </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+  <!-- Modal Minhas Sugestoes-->
 </body>
 </html>
 

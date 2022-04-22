@@ -13,3 +13,35 @@ section {
 .card {
     background-color: rgb(100, 100, 100, 0.5);
 }
+/* style modal */
+.tela-modal{
+    width: 200px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 500px;
+}
+.modal-content{
+    width: 1060px;
+}
+.modal-title{
+    font-size: 55px;
+    font-weight: bold;
+    margin:auto;
+}
+.btn-modal{
+    width: 150px;
+    font-size: 20px;
+    margin-right: 225px;
+}
+.info{
+    font-size: 25px;
+    margin-left: 370px;
+}
+.textarea{
+    width: 500px;
+    height: 200px;
+    margin-left: 280px;
+    font-size: 20px;
+}
