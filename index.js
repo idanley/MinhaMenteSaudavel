@@ -32,7 +32,11 @@ const cadastroController = require('./controllers/cadastroController');
 const meetingController = require('./controllers/mettingController');
 const liveChatController = require('./controllers/liveChatController');
 const adminController = require('./controllers/adminController');
-const SugestoesController = require('./controllers/SugestoesController');
+const sugestoesController = require('./controllers/sugestoesController');
+
+
+
+
 
 //view engine
 app.set('view engine', 'ejs');
@@ -56,7 +60,10 @@ app.use('/', cadastroController);
 app.use('/', meetingController);
 app.use('/', liveChatController);
 app.use('/', adminController)
-app.use('/', SugestoesController)
+app.use('/', sugestoesController)
+
+
+
 
 //Servidor
 http.listen(3000, () => console.log('servidor ON'));

@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const Sugestoes = require('../models/Sugestoes');
 const Paciente = require('../models/Paciente');
 
 router.get('/indexAdmin', (req, res) => {

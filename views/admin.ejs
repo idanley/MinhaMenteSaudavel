@@ -1,51 +1,59 @@
 <%- include('partials/header') %>
-<link rel="stylesheet" href="css/admin.css">
-<style>
-  body{
-    background-color: #000;
-  }
-</style>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <link rel="stylesheet" href="css/admin.css">
+  <style>
+    body {
+      background-color: #000;
+    }
+  </style>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="#">
-        <img  src="../../img/logo.png" style="width: 55px; height: 55px; margin-left: 10px;" alt=""> 
-        <label style="cursor: pointer; border-bottom: 1px solid rgb(120, 224, 231)">Minha Mente Saudável</label> 
+      <img src="../../img/logo.png" style="width: 55px; height: 55px; margin-left: 10px;" alt="">
+      <label style="cursor: pointer; border-bottom: 1px solid rgb(120, 224, 231)">Minha Mente Saudável</label>
     </a>
     <div class="collapse navbar-collapse" id="navbarNav">
-      
+
       <ul class="navbar-nav bg-d align-items-center" style="padding:0 25px;">
         <li class="nav-item active">
-          <a class="nav-link btn btn-dark btn-sm" href="/chamada-video" style="font-weight: 600; color: aliceblue; margin-left: 20px;">Consulta</a>
+          <a class="nav-link btn btn-dark btn-sm" href="/chamada-video"
+            style="font-weight: 600; color: aliceblue; margin-left: 20px;">Consulta</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn btn-dark btn-sm" href="/chat" style="font-weight: 600; color: aliceblue; margin-left: 20px">Chat</a>
+          <a class="nav-link btn btn-dark btn-sm" href="/chat"
+            style="font-weight: 600; color: aliceblue; margin-left: 20px">Chat</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn btn-dark btn-sm" href="/agendamento" style="font-weight: 600; color: aliceblue; margin-left: 20px">Agendamento</a>
+          <a class="nav-link btn btn-dark btn-sm" href="/agendamento"
+            style="font-weight: 600; color: aliceblue; margin-left: 20px">Agendamento</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn btn-dark btn-sm" href="/perfil/<%= id %>" style="font-weight: 600; color: aliceblue; margin-left: 20px">Perfil</a>
+          <a class="nav-link btn btn-dark btn-sm" href="/perfil/<%= id %>"
+            style="font-weight: 600; color: aliceblue; margin-left: 20px">Perfil</a>
         </li>
         <li class="nav-item">
-          <a style="margin-left: 20px;" class="nav-link btn btn-dark btn-sm" href="/logout" tabindex="-1" aria-disabled="false"  style="font-weight: 600; color: aliceblue;">Sair</a>
+          <a style="margin-left: 20px;" class="nav-link btn btn-dark btn-sm" href="/logout" tabindex="-1"
+            aria-disabled="false" style="font-weight: 600; color: aliceblue;">Sair</a>
         </li>
         <li class="nav-item">
-          <a style="margin-left: 20px;" class="nav-link btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#sugestoes"  tabindex="-1" aria-disabled="false"  style="font-weight: 600; color: aliceblue;">Sugestões</a>
+          <a style="margin-left: 20px;" class="nav-link btn btn-dark btn-sm" data-bs-toggle="modal"
+            data-bs-target="#sugestoes" tabindex="-1" aria-disabled="false"
+            style="font-weight: 600; color: aliceblue;">Sugestões</a>
         </li>
         <li class="nav-item">
-          <a style="margin-left: 20px;" class="nav-link btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#Minhassugestoes"  tabindex="-1" aria-disabled="false"  style="font-weight: 600; color: aliceblue;"> Minhas Sugestões</a>
+         
         </li>
       </ul>
-     
+
       <div class="text-white" style="width: 52%; display: flex; justify-content: flex-end; align-items: center;">
         <i style="color: #fff;" class="bi bi-person-check fs-4"></i>
-        <label style="border-bottom: 1px solid rgb(120, 224, 231); margin-left: 7px;" for="">Olá, <%= nome %></label>      
-      </div> 
+        <label style="border-bottom: 1px solid rgb(120, 224, 231); margin-left: 7px;" for="">Olá, <%= nome %></label>
+      </div>
     </div>
   </nav>
-<body>
+
+  <body>
     <br>
     <section>
-    <div class="card mb-3" style="max-width: 540px;">
+      <div class="card mb-3" style="max-width: 540px;">
         <div class="row no-gutters">
           <div class="col-md-4">
             <img src="/img/saude.webp" height="100%" width="100%" class="card-img" alt="...">
@@ -53,8 +61,11 @@
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title" style="color: rgb(236, 236, 240); font-weight: 600;">Card title</h5>
-              <p class="card-text" style="color: rgb(236, 236, 240); font-weight: 600;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text" style="color: rgb(236, 236, 240); font-weight: 600;"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <p class="card-text" style="color: rgb(236, 236, 240); font-weight: 600;">This is a wider card with
+                supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+              </p>
+              <p class="card-text" style="color: rgb(236, 236, 240); font-weight: 600;"><small class="text-muted">Last
+                  updated 3 mins ago</small></p>
             </div>
           </div>
         </div>
@@ -68,8 +79,11 @@
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title" style="color: rgb(236, 236, 240); font-weight: 600;">Card title</h5>
-              <p class="card-text" style="color: rgb(236, 236, 240); font-weight: 600;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text" style="color: rgb(236, 236, 240); font-weight: 600;"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <p class="card-text" style="color: rgb(236, 236, 240); font-weight: 600;">This is a wider card with
+                supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+              </p>
+              <p class="card-text" style="color: rgb(236, 236, 240); font-weight: 600;"><small class="text-muted">Last
+                  updated 3 mins ago</small></p>
             </div>
           </div>
         </div>
@@ -83,8 +97,11 @@
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title" style="color: rgb(236, 236, 240); font-weight: 600;">Card title</h5>
-              <p class="card-text" style="color: rgb(236, 236, 240); font-weight: 600;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text" style="color: rgb(236, 236, 240); font-weight: 600;"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <p class="card-text" style="color: rgb(236, 236, 240); font-weight: 600;">This is a wider card with
+                supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+              </p>
+              <p class="card-text" style="color: rgb(236, 236, 240); font-weight: 600;"><small class="text-muted">Last
+                  updated 3 mins ago</small></p>
             </div>
           </div>
         </div>
@@ -92,65 +109,45 @@
     </section>
     <hr>
 
-      <!-- Modal Sugestoes do usuario-->
+    <!-- Modal Sugestoes do usuario-->
     <div>
       <div class="modal fade" id="sugestoes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <link rel="stylesheet" href="/css/admin.css">
-                      <h5 class="modal-title" id="exampleModalLabel ">Deixe suas sugestões ou Elogios</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <link rel="stylesheet" href="/css/admin.css">
+              <h5 class="modal-title" id="exampleModalLabel ">Deixe suas sugestões ou Elogios</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="/admin" method="post">
+                <div class="row">
+                  <div class="col-md-8">
+                    <label id="label" class="info">Digite sua sugestão Aqui:</label><textarea style="resize: none"
+                      maxlength="250" class="textarea" name="Sugestao" id="" style="height: 100px;"
+                      class="modal-input form-control" type="text"></textarea>
                   </div>
-                  <div class="modal-body">
-                  <form action="/admin" method="post">
-                      <div class="row">
-                          <div class="col-md-8">
-                              <label id="label" class="info">Digite sua sugestão Aqui:</label><textarea
-                                  style="resize: none" maxlength="250" class="textarea" name="Sugestao" id=""
-                                  style="height: 100px;" class="modal-input form-control" type="text"></textarea>
-                          </div>
-                          <div class="modal-footer">
-                              <button type="submit" type="button" class="btn btn-success btn-modal"
-                                  data-bs-dismiss="modal">Enviar</button>
-                              <a href="/admin">
-                                  <button type="button" class="btn btn-primary btn-modal">Voltar</button></a>
-                          </div>
-                  </form>
-              </div>
+                  <div class="modal-footer">
+                    <button type="submit" type="button" class="btn btn-success btn-modal"
+                      data-bs-dismiss="modal">Enviar</button>
+                    <a href="/admin">
+                      <button type="button" class="btn btn-primary btn-modal">Voltar</button></a>
+                  </div>
+              </form>
+            </div>
           </div>
+        </div>
       </div>
     </div>
-  </div>
-    <!-- Modal listSugetoes do usuario-->
+  
 
-      <!-- Modal Minhas Sugestoes-->
-       <div>
-      <div class="modal fade" id="Minhassugestoes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <link rel="stylesheet" href="">
-                      <h5 class="modal-title" id="exampleModalLabel ">Suas sugestões e elogios</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                      <div class="row">
-                          <div class="modal-footer">
-                              <a href="/admin">
-                                  <button type="button" class="btn btn-primary btn-modal">Voltar</button></a>
-                          </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-  <!-- Modal Minhas Sugestoes-->
-</body>
-</html>
+    
+  </body>
+
+  </html>
 
 
 
-<!-- 
+  <!-- 
 <i class="bi bi-x-circle-fill"></i>
 -->

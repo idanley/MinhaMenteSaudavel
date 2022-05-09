@@ -1,40 +1,99 @@
 <%- include('partials/header') %>
-<%- include('partials/navbar') %>
+    <%- include('partials/navbar') %>
 
-<style>
+        <style>
+            body {
+                background-color: #222;
+                color: #fff;
+            }
 
-    body {
-        background-color: #222;
-        color: #fff;
-    }
-    .container {
-        max-width: 660px;
-        margin: 30px auto;
-    }
+            .container {
+                max-width: 660px;
+                margin: 30px auto;
+            }
 
-    .container h1 {
-        margin-left: 120px;
-    }
+            .container h1 {
+                margin-left: 120px;
+            }
 
-    a {
-        text-decoration: none;
-        color: #000;
-        padding: 15px;
-        font-weight: bold;
-    }
-</style>
+            a {
+                text-decoration: none;
+                color: #000;
+                padding: 15px;
+                font-weight: bold;
+            }
+        </style>
 
-<body>
-    
-    <div class="container">
+        <!DOCTYPE html>
+        <html lang="en">
 
-        <h1>Perfil Administrador</h1>
-        <hr>
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
 
-        <div class="card">
-            <a href="/indexAdmin"><h4>Gerenciamento de Usuários</h4></a>
+        <body>
+
+            <div class="container">
+
+                <h1>Perfil Administrador</h1>
+                <hr>
+
+                <div class="card">
+                    <a href="/indexAdmin">
+                        <h4>Gerenciamento de Usuários</h4>
+                    </a>
+                </div><br><br>
+           
+            <div>
+                <h4 style="margin-left: 20px;"class=" a btn btn-info" data-bs-toggle="modal"
+                    data-bs-target="#listSugestoes" tabindex="-1" aria-disabled="false"
+                    style="font-weight: 600; color: aliceblue;"> Listar Sugestões</h4>
+            </div>
+            <!-- Modal listSugestoes-->
+            <div>
+                <div>
+                    <div class="modal fade" id="listSugestoes" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <link rel="stylesheet" href="/css/1admin.css">
+                                    <h5 class="modal-title" id="exampleModalLabel ">Sugestoes dos Usuarios</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/superUser" method="post">
+
+                                        <% sugestoes.forEach(sugestao => { %>
+                                            <table> ID = <%= sugestao.id %><br>
+                                                    Sugestão = <%= sugestao.sugestoes %><br>
+                                                        <a href="/superUser/<%= sugestao.id %>">
+                                                            <button type="submit" name="Del"
+                                                                class="btn btn-danger btn-modal">Deletar</button></a><br>
+                                                        <hr>
+                                                        <% }) %>
+                                            </table>
+                                    </form>
+
+                                    <div class="row">
+                                        <div>
+                                            <a href="/superUser'">
+                                                <button type="button"
+                                                    class="btn btn-primary btn-modal">Voltar</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal listSugestoes-->
         </div>
+        </body>
 
-    </div>
-
-</body>
+        </html>
