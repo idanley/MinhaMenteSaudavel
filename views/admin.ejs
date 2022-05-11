@@ -4,6 +4,37 @@
     body {
       background-color: #000;
     }
+
+    #mensagem {
+      border-radius: 15px;
+      width: 600px;
+      height: 300px;
+      margin-left: 210px;
+      font-size: 25px;
+      text-align: center;
+    }
+
+    #iputdescricao {
+      border-radius: 10px;
+      height: 60px;
+      width: 500px;
+      margin-left: 260px;
+      font-size: 30px;
+      text-align: center;
+    
+      
+    }
+
+    #info {
+      font-size: 25px;
+      margin-left: 365px;
+    }
+
+    #labelcontador{
+      margin-top: 10px;
+      
+    }
+
   </style>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="#">
@@ -116,22 +147,21 @@
           <div class="modal-content">
             <div class="modal-header">
               <link rel="stylesheet" href="/css/admin.css">
-              <h5 class="modal-title" id="exampleModalLabel ">Deixe suas sugestões ou Elogios</h5>
+              <h5 class="modal-title" id="exampleModalLabel ">Deixe suas sugestões ou elogios</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <form action="/admin" method="post">
                 <div class="row">
                   <div class="col-md-8">
-                    <label style="margin-left: 400px;" class="info" for=" descricao"> Descrição da Sugestão </label><br>
-                    <input style="margin-left: 430px;" name="descricao" type="text"><br><br>
-                    <label for="mensagem" id="label" class="info">Digite sua sugestão Aqui:</label>
+                    <label id="info" for=" descricao"> <b>Descrição da Sugestão: </label><br>
+                    <input id="iputdescricao" name="descricao" type="text" maxlength="40"><br><br>
+                    <label for="mensagem" id="info">Digite sua sugestão Aqui:</label>
                     <textarea onkeyup="contador_caracteres(this.value)" style="resize: none" maxlength="250"
                       class="textarea" name="Sugestao" id="mensagem" style="height: 100px;"
                       class="modal-input form-control" type="text"></textarea>
-                    <div style="margin-left: 430px;">
-                      <label>Caracteres restantes
-                        <p id="contador">250</p></label>
+                    <div id="info" style="margin-left: 430px;">
+                      <label id="labelcontador" for="contador">Caracteres restantes</label><p id="contador">250</p>
                     </div>
                   </div>
                   <div class="modal-footer">

@@ -39,7 +39,10 @@ const sugestoesController = require('./controllers/sugestoesController');
 
 
 //view engine
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs', {
+
+
+});
 
 //Session config.
 app.use(session({
