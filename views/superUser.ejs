@@ -4,7 +4,7 @@
         <style>
             body {
                 background-color: #222;
-                color: #fff;
+                color: #222;
             }
 
             .container {
@@ -46,54 +46,70 @@
                         <h4>Gerenciamento de Usuários</h4>
                     </a>
                 </div><br><br>
-           
-            <div>
-                <h4 style="margin-left: 20px;"class=" a btn btn-info" data-bs-toggle="modal"
-                    data-bs-target="#listSugestoes" tabindex="-1" aria-disabled="false"
-                    style="font-weight: 600; color: aliceblue;"> Listar Sugestões</h4>
-            </div>
-            <!-- Modal listSugestoes-->
-            <div>
+
                 <div>
-                    <div class="modal fade" id="listSugestoes" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <link rel="stylesheet" href="/css/1admin.css">
-                                    <h5 class="modal-title" id="exampleModalLabel ">Sugestoes dos Usuarios</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="/superUser" method="post">
 
-                                        <% sugestoes.forEach(sugestao => { %>
-                                            <table> ID = <%= sugestao.id %><br>
-                                                    Sugestão = <%= sugestao.sugestoes %><br>
-                                                        <a href="/superUser/<%= sugestao.id %>">
-                                                            <button type="submit" name="Del"
-                                                                class="btn btn-danger btn-modal">Deletar</button></a><br>
-                                                        <hr>
+                    <div class="card">
+                        <button data-bs-toggle="modal" data-bs-target="#listSugestoes" tabindex="-1"
+                            aria-disabled="false">
+                            <h4>Listar Sugestões dos Usuários<h4>
+
+                    </div>
+                    <!-- Modal listSugestoes-->
+                    <div>
+                        <div>
+                            <div class="modal fade" id="listSugestoes" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content" style="width: 1200px;">
+                                        <div class="modal-header">
+                                            <link rel="stylesheet" href="/css/1admin.css">
+                                            <h5 class="modal-title" id="exampleModalLabel ">Sugestoes dos Usuarios</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="row">
+                                        <div class="modal-body">
+                                            <form action="/superUser" method="post">
+                                                <% sugestoes.forEach(sugestao=> { %>
+                                                    <div class="col-md-16">
+                                                    <table class="table table-houver">
+                                                        <thead>
+                                                        <tr>
+                                                            <th scope="col">ID</th>
+                                                            <th scope="col-md-4" >Descrição</th>
+                                                            <th scope="col-md-4" >Sugestão<th>
+                                                            <th class="col-md-2" >Data de envio<th>
+                                                                <a href="/superUser/<%= sugestao.id %>">
+                                                                    <button type="submit" name="Del"
+                                                                        class="btn btn-danger btn-modal">Deletar</button></a>
+                                                        </tr>
+                                                        </thead>
+                                                        <tr>
+                                                            <th class="col-md-1"><%= sugestao.id %></th>
+                                                            <td class="col-md-2"><%= sugestao.descrição %></td>
+                                                            <td class="col-md-4"><%= sugestao.sugestoes %></td>
+                                                            <td class="col-md-3"><%= sugestao.createdAt %> </td>  
                                                         <% }) %>
-                                            </table>
-                                    </form>
-
-                                    <div class="row">
-                                        <div>
-                                            <a href="/superUser'">
-                                                <button type="button"
-                                                    class="btn btn-primary btn-modal">Voltar</button></a>
+                                                        <br><br>
+                                                        <hr>
+                                                    </tr>
+                                                    </table>
+                                                </div>
+                                                </div>
+                                            </form>
+                                                <div>
+                                                    <button n type="button" data-bs-dismiss="modal" aria-label="Close"
+                                                        type="button"
+                                                        class="btn btn-primary btn-modal">Voltar</button></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Modal listSugestoes-->
                     </div>
-                </div>
-            </div>
-            <!-- Modal listSugestoes-->
-        </div>
         </body>
 
         </html>

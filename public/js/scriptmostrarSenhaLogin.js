@@ -5,5 +5,6 @@ function opensenha() {
         visual.type = "text"
     } else {
         visual.type = "password"
-    }
+    } 
+
 }

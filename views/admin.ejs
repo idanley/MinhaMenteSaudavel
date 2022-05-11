@@ -39,7 +39,7 @@
             style="font-weight: 600; color: aliceblue;">Sugestões</a>
         </li>
         <li class="nav-item">
-         
+
         </li>
       </ul>
 
@@ -123,9 +123,16 @@
               <form action="/admin" method="post">
                 <div class="row">
                   <div class="col-md-8">
-                    <label id="label" class="info">Digite sua sugestão Aqui:</label><textarea style="resize: none"
-                      maxlength="250" class="textarea" name="Sugestao" id="" style="height: 100px;"
+                    <label style="margin-left: 400px;" class="info" for=" descricao"> Descrição da Sugestão </label><br>
+                    <input style="margin-left: 430px;" name="descricao" type="text"><br><br>
+                    <label for="mensagem" id="label" class="info">Digite sua sugestão Aqui:</label>
+                    <textarea onkeyup="contador_caracteres(this.value)" style="resize: none" maxlength="250"
+                      class="textarea" name="Sugestao" id="mensagem" style="height: 100px;"
                       class="modal-input form-control" type="text"></textarea>
+                    <div style="margin-left: 430px;">
+                      <label>Caracteres restantes
+                        <p id="contador">250</p></label>
+                    </div>
                   </div>
                   <div class="modal-footer">
                     <button type="submit" type="button" class="btn btn-success btn-modal"
@@ -139,9 +146,21 @@
         </div>
       </div>
     </div>
-  
 
-    
+    <script type="text/javascript">
+
+      function contador_caracteres(valor) {
+        const caracter = 250
+        const total = valor.length
+        if (total <= caracter) {
+          const restante = caracter - total;
+          document.getElementById('contador').innerHTML = restante;
+        } else {
+          document.getElementById('mensagem').value = valor.substr(0, caracter);
+        }
+
+      };
+    </script>
   </body>
 
   </html>
