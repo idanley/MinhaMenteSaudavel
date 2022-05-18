@@ -10,7 +10,7 @@ router.post('/admin', (req, res) => {
     if (sugest !== undefined && sugest !== null && sugest !== '' && descricao !== undefined && descricao !== null && descricao !== '') {
         sugestoes.create({
             sugestoes: sugest,
-            descrição: descricao
+            descricao: descricao
         }).then(() => {
             res.send('<script> alert("Sua Sugestão foi enviada Com Sucesso para equipe de desenvolvimento!"); window.location.href = "/admin"</script>');
 

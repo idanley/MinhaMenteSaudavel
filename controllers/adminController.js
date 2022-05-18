@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const sugestoes = require('../models/Sugestoes');
 const Paciente = require('../models/Paciente');
+
 
 router.get('/indexAdmin', (req, res) => {
     res.render('indexAdmin')
@@ -95,7 +97,9 @@ router.post('/delete', (req, res) => {
         res.send('<script>alert("Usuário inválido!"); window.location.href = "/usuarios"</script>');
     
     }
+
 })
+
 
 
 module.exports = router;

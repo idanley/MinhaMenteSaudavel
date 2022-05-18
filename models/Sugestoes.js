@@ -4,7 +4,7 @@ const connection = require('../database/database');
 const SugestoesUser = connection.define('Sugestoes', {
 
 
-    descrição: {
+    descricao: {
         type: Sequelize.STRING,
         allowNull: false
     },

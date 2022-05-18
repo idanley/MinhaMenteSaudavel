@@ -1,197 +1,212 @@
-<%- include('partials/header') %>
-  <%- include('partials/navbar') %>
-    <link rel="stylesheet" href="css/cadastro.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-    <body>
-      <div class="container col-9">
-        <div id="iner" class="card card-header">
-          <h3 style="color: #fff; font-weight: 600;">Cadastro</h3>
-          <div class="" style="display: flex; justify-content: center;">
-            <i class="bi bi-person fs-1" style="color: #fff;"></i>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/cadastro.css">
+
+  <nav style="height: 140px;" class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="/logout">
+      <img src="../../img/logo.png" style="width: 50px; height: 35px; margin-left: 10px;" alt=""> <label style="cursor: pointer; border-bottom: 1px solid rgb(120, 224, 231);">Minha mente saudável V. 2.2.2</label>
+    </a>
+  </nav>
+
+  <title>Mente Saudável</title>
+
+<body>
+  <div class="container col-9">
+    <div id="iner" class="card card-header">
+      <h3 style="color: #fff; font-weight: 600;">Cadastro</h3>
+      <div class="" style="display: flex; justify-content: center;">
+        <i class="bi bi-person fs-1" style="color: #fff;"></i>
+      </div>
+      <div>
+        <button id="modalchange" type="button" class="btn btn-primary btn-lg col-3" data-toggle="modal"
+          data-target="#perfil">
+          Escolher outro perfil
+        </button>
+      </div>
+      <div class="card card-body needs-validation">
+        <form method="POST" action="/cadastro/save" class="row g-3 form-contato" >
+          <div class="col-md-6">
+            <label for="inputNome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="inputNome" placeholder="nome completo..." name="nome" autocomplete="off">
           </div>
-        </div>
-        <div class="card card-body needs-validation">
-          <form method="POST" action="/cadastro/save" class="row g-3 form-contato" onsubmit="validate(event, this)">
-            <div class="col-md-6">
-              <label for="inputNome" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="inputNome" placeholder="nome completo..." name="nome">
-            </div>
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="ex: abc@gmail.com" name="email">
-            </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="inputPassword" placeholder="senha..." name="senha">
-            </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Confirmar senha</label>
-              <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="confirmar senha..."
-                name="confirmSenha">
-            </div>
-            <div>
-              <input id="Senha" type="checkbox" onclick="opensenha()"> Mostrar Senha
-            </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">CNPJ</label>
-              <input type="text" class="form-control" id="cnpj" placeholder="campo voltado para instituições de ensino"
-                name="cnpj">
-            </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Matricula</label>
-              <input type="text" class="form-control" id="matricula"
-                placeholder="campo voltado para instituições de ensino" name="matricula">
-            </div>
-            <div class="col-12">
-              <label for="inputAddress" class="form-label">CEP</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="CEP : XXXXX-XXX" name="endereco">
-            </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="ex: abc@gmail.com" name="email" autocomplete="off">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="senha..." name="senha" autocomplete="off">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Confirmar senha</label>
+            <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="confirmar senha..."
+              name="confirmSenha">
+          </div>
+          <div>
+            <input id="Senha" type="checkbox" onclick="opensenha()"> Mostrar Senha
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">CNPJ</label>
+            <input type="text" class="form-control" id="cnpj" placeholder="campo voltado para instituições de ensino"
+              name="cnpj">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Matricula</label>
+            <input type="text" class="form-control" id="matricula"
+              placeholder="campo voltado para instituições de ensino" name="matricula">
+          </div>
+          <div class="col-12">
+            <label for="inputAddress" class="form-label">CEP</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="CEP : XXXXX-XXX" name="endereco">
+          </div>
 
-            <div class="col-md-6">
-              <label for="address" class="form-label">Rua</label>
-              <input type="text" class="form-control" id="address" name="address">
-            </div>
-            <div class="col-md-6">
-              <label for="district" class="form-label">Bairro</label>
-              <input type="text" class="form-control" id="district" name="district">
-            </div>
-            <div class="col-md-6">
-              <label for="inputCity" class="form-label">Cidade</label>
-              <input type="text" class="form-control" id="inputCity" name="cidade">
-            </div>
-            <div class="col-md-6">
-              <label for="inputState" class="form-label">Estado</label>
-              <select name="estado" id="inputState" class="form-select">
-                <option selected>Estado...</option>
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-                <option value="EX">Estrangeiro</option>
-              </select>
-            </div>
+          <div class="col-md-6">
+            <label for="address" class="form-label">Rua</label>
+            <input type="text" class="form-control" id="address" name="address">
+          </div>
+          <div class="col-md-6">
+            <label for="district" class="form-label">Bairro</label>
+            <input type="text" class="form-control" id="district" name="district">
+          </div>
+          <div class="col-md-6">
+            <label for="inputCity" class="form-label">Cidade</label>
+            <input type="text" class="form-control" id="inputCity" name="cidade">
+          </div>
+          <div class="col-md-6">
+            <label for="inputState" class="form-label">Estado</label>
+            <select name="estado" id="inputState" class="form-select">
+              <option selected>Estado...</option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+              <option value="EX">Estrangeiro</option>
+            </select>
+          </div>
 
-            <div class="col-md-4">
-              <label for="inputzip1" class="form-label">CPF</label>
-              <input name="cpf" type="text" class="form-control" placeholder="000.000.000-00" id="inputZip1">
-            </div>
+          <div class="col-md-4">
+            <label for="inputzip1" class="form-label">CPF</label>
+            <input name="cpf" type="text" class="form-control" placeholder="000.000.000-00" id="inputZip1">
+          </div>
 
-            <div class="col-md-4">
-              <label for="inputzip2" class="form-label">CFP</label>
-              <input name="cfp" type="text" class="form-control" id="inputzip2" placeholder="psicólogo">
-            </div>
+          <div class="col-md-4">
+            <label hidden id="inputzip3" for="inputzip2" class="form-label">CFP</label>
+            <input hidden name="cfp" type="text" class="form-control" id="inputzip2" placeholder="psicólogo">
+          </div>
 
-            <div class="col-md-4">
-              <label for="inputZip" class="form-label">CRM/NOME/ESPECIALIDADE</label>
-              <input name="crm" type="text" class="form-control" id="inputZip" placeholder="CRM">
-            </div>
+          <div class="col-md-4">
+            <label hidden id="label1" for="inputZip" class="form-label">CRM/NOME/ESPECIALIDADE</label>
+            <input hidden name="crm" type="text" class="form-control" id="inputZip" placeholder="CRM">
+          </div>
 
-            <div class="col-md-4">
-              <label for="ufcrm" class="form-label">UF</label>
-              <input name="ufcrm" type="text" class="form-control" id="ufcrm" placeholder="UF">
-            </div>
+          <div class="col-md-4">
+            <label hidden id="ufcrm1" for="ufcrm" class="form-label">UF</label>
+            <input hidden name="ufcrm" type="text" class="form-control" id="ufcrm" placeholder="UF">
+          </div>
 
-            <div class="col-md-4">
-              <label for="nomeprof" class="form-label">NOME DO PROFISSIONAL</label>
-              <input name="nomeprof" readonly type="text" class="form-control" id="nomeprof">
-            </div>
+          <div class="col-md-4">
+            <label hidden for="nomeprof" id="nomeprof1" class="form-label">NOME DO PROFISSIONAL</label>
+            <input hidden name="nomeprof" readonly type="text" class="form-control" id="nomeprof">
+          </div>
 
-            <div class="col-md-4">
-              <label for="inputZip" class="form-label">ESPECIALIZAÇÃO</label>
-              <input name="prof" readonly type="text" class="form-control" id="prof" placeholder="">
-            </div>
+          <div class="col-md-4">
+            <label hidden id="prof1" for="inputZip" class="form-label">ESPECIALIZAÇÃO</label>
+            <input hidden name="prof" readonly type="text" class="form-control" id="prof" placeholder="">
+          </div>
 
-            <div class="col-md-4">
-              <label for="inputZip" class="form-label">STATUS</label>
-              <input name="status" readonly type="text" class="form-control" id="status" placeholder="">
-            </div>
+          <div class="col-md-4">
+            <label hidden id="status1" for="inputZip" class="form-label">STATUS</label>
+            <input hidden name="status" readonly type="text" class="form-control" id="status" placeholder="">
+          </div>
 
-            <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck" required>
-                <label class="form-check-label" for="gridCheck">
-                  Concordo com os termos -
-                  <a style="font-size: 13px;"
-                    href="https://www.gov.br/mme/pt-br/servicos/TermodeDeclaraodeConcordnciaeVeracidade.pdf">Termo</a>
-                </label>
-              </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck" required>
+              <label class="form-check-label" for="gridCheck">
+                Concordo com os termos -
+                <a style="font-size: 13px;"
+                  href="https://www.gov.br/mme/pt-br/servicos/TermodeDeclaraodeConcordnciaeVeracidade.pdf">Termo</a>
+              </label>
             </div>
-            <div class="d-grid gap-2 col-6 mx-auto">
-              <button type="submit" class="btn btn-primary">Cadastrar</button>
-            </div>
-            <div class="alert alert-danger d-none">
-              Preencha o campo <span id="campo-erro"></span>!
-            </div>
+          </div>
+          <div class="d-grid gap-2 col-4 mx-auto">
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+          </div>
+          <div class="alert alert-danger d-none">
+            Preencha o campo <span id="campo-erro"></span>!
+          </div>
 
-            <div>
-              <a class="btn btn-dark btn-sm text-white" href="/">Voltar</a>
-            </div>
-          </form>
-          <br>
+          <div>
+            <a class="btn btn-dark btn-sm text-white col-2" href="/">Voltar</a>
+          </div>
+        </form>
+        <br>
+      </div>
+    </div>
+</body>
+
+<!-- Modal  seleção Perfil-->
+<div class="modal fade" id="perfil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static"
+  data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Escolha um perfil para se Cadastrar</h4>
+      </div>
+      <div class="modal-body">
+        <input class="radio" type="radio" name="user" id="user" onclick="user('paci')">
+        <p class="radio_infor">Paciente</p><br>
+        <input class="radio" onclick="user('psic')" type="radio" name="user" id="psicologo">
+        <p class="radio_infor">Piscólogo</p><br>
+        <input id="radio" class="radio" onclick="user('crm')"  type="radio" name="user" i="crm">
+        <p class="radio_infor">Médico</p>
+        <div class="modal-footer">
+          <a type="button" href="/logout" tabindex="-1" class="btnm btn btn-danger">sair</a>
         </div>
       </div>
-      <hr>
-      <script type="text/javascript" src="/js/jquery.mask.js"></script>
-      <script type="text/javascript">
-        $(document).ready(function () {
-          $('#inputZip1').mask('000.000.000-00', { reverse: true });
-          $('#inputAddress').mask('00000-000', { reverse: false });
-          $('#cnpj').mask('00.000.000/0000-00', { reverse: false });
-          $('#inputZip').mask('00000', { reverse: false });
-          $('#inputzip2').mask('00000', { reverse: false });
+    </div>
+    <!-- Modal  seleção Perfil-->
 
-        });
-      </script>
-
-      <!-- mostrar senha, input Senha -->
-      <script type="text/javascript">
-        function opensenha() {
-
-          const visual2 = document.getElementById("inputPassword")
-          const visual = document.getElementById("inputPasswordConfirm")
-
-          if (visual.type == "password") {
-            visual.type = "text"
-          } else {
-            visual.type = "password"
-          } 
-
-          if (visual2.type == "password") {
-            visual2.type = "text"
-          } else {
-            visual2.type = "password"
-          }
-
-
-        }
-      </script>
-
-    </body>
+    <!-- SCRIPTS  -->
+    <script type="text/javascript" src="/js/scriptcadastro.js"></script>
+    <script type="text/javascript" src="/js/jquery.mask.js"></script>
     <script>
 
       function validate(event, form) {
@@ -208,6 +223,7 @@
         const cpf = document.querySelector('#inputZip1');
         const erro = document.querySelector('.alert');
         const campo = document.querySelector('#campo-erro');
+      
 
         erro.classList.add('d-none');
         nome.classList.remove('is-invalid');
@@ -300,7 +316,6 @@
           }
         })
       }
-
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -350,4 +365,4 @@
       }
     </script>
 
-    </html>
+</html>

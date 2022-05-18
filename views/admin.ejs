@@ -26,7 +26,7 @@
     }
 
     #info {
-      font-size: 25px;
+      font-size: 23px;
       margin-left: 365px;
     }
 
@@ -64,8 +64,10 @@
           <a style="margin-left: 20px;" class="nav-link btn btn-dark btn-sm" href="/logout" tabindex="-1"
             aria-disabled="false" style="font-weight: 600; color: aliceblue;">Sair</a>
         </li>
+
         <li class="nav-item">
-          <a style="margin-left: 20px;" class="nav-link btn btn-dark btn-sm" data-bs-toggle="modal"
+          <!-- link modal -->
+          <a style="margin-left: 20px;"  id="sugestaoModal" class="nav-link btn btn-dark btn-sm" data-bs-toggle="modal"
             data-bs-target="#sugestoes" tabindex="-1" aria-disabled="false"
             style="font-weight: 600; color: aliceblue;">Sugestões</a>
         </li>
@@ -142,11 +144,11 @@
 
     <!-- Modal Sugestoes do usuario-->
     <div>
-      <div class="modal fade" id="sugestoes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="sugestoes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-labelledby="myModalLabel"
+          data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <link rel="stylesheet" href="/css/admin.css">
               <h5 class="modal-title" id="exampleModalLabel ">Deixe suas sugestões ou elogios</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -160,8 +162,8 @@
                     <textarea onkeyup="contador_caracteres(this.value)" style="resize: none" maxlength="250"
                       class="textarea" name="Sugestao" id="mensagem" style="height: 100px;"
                       class="modal-input form-control" type="text"></textarea>
-                    <div id="info" style="margin-left: 430px;">
-                      <label id="labelcontador" for="contador">Caracteres restantes</label><p id="contador">250</p>
+                    <div id="info" style="margin-left: 410px;">
+                     <span id="contador">250</span> Caracteres restantes
                     </div>
                   </div>
                   <div class="modal-footer">

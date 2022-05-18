@@ -23,7 +23,6 @@ router.post('/authenticate', (req, res) => {
 
     Paciente.findOne({ where: { email } }).then(user => {
         if (user != undefined) {
-
             let correct = bcrypt.compareSync(senha, user.senha)
 
             if (correct) {
@@ -33,12 +32,12 @@ router.post('/authenticate', (req, res) => {
                     email: user.email,
                     superuser: user.superuser
                 }
-
                 if (user.superuser === 'true') {
 
                     sugestoes.findAll({ raw: true }).then((sugestoes) => {
-                        res.render('superUser', {sugestoes: sugestoes,  users: user.nome  });
-                    });
+                        res.render('superUser', {sugestoes: sugestoes,  users: user.nome  }); 
+                    });  
+
                 } else {
                     res.render('admin', { id: req.session.user.id, nome: req.session.user.nome }); //Lembrar de enviar para a pagina de escolha;
                 }
@@ -51,7 +50,37 @@ router.post('/authenticate', (req, res) => {
             res.send("<script>alert('E-mail inválido'); window.location.href = '/'; </script>");
         }
     });
+
+   
 });
+
+router.post('/deleteSugestoes', adminAuth.authenticate, (req, res) => {
+    let Id = req.body.id;
+
+if(Id != undefined) {
+
+    if(!isNaN(Id)) {
+
+        sugestoes.destroy({
+            where:{
+                id: Id
+            }
+        }).then(() => {
+            res.status(200);
+            res.send('<script>alert("Sugestão removida!"); window.location.href = "/indexAdmin"</script>');  
+        }).catch(() => {
+            res.status(404);
+            res.send('<script>alert("Não existe suegstão!"); window.location.href = "/indexAdmin"</script>');
+        })
+    }
+
+} else {
+    res.status(404);
+    res.send('<script>alert("Não existe suegstão!"); window.location.href = "/indexAdmin"</script>');
+
+}
+})
+
 
 router.get('/perfil/:id', adminAuth.authenticate, (req, res) => {
 
