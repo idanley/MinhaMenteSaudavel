@@ -34,8 +34,8 @@ router.post('/authenticate', (req, res) => {
                 }
                 if (user.superuser === 'true') {
 
-                    sugestoes.findAll({ raw: true }).then((sugestoes) => {
-                        res.render('superUser', {sugestoes: sugestoes,  users: user.nome  }); 
+                    Paciente.findAll({ raw: true }).then((user) => {
+                        res.render('superUser', {users: user.nome  }); 
                     });  
 
                 } else {
@@ -54,32 +54,6 @@ router.post('/authenticate', (req, res) => {
    
 });
 
-router.post('/deleteSugestoes', adminAuth.authenticate, (req, res) => {
-    let Id = req.body.id;
-
-if(Id != undefined) {
-
-    if(!isNaN(Id)) {
-
-        sugestoes.destroy({
-            where:{
-                id: Id
-            }
-        }).then(() => {
-            res.status(200);
-            res.send('<script>alert("Sugestão removida!"); window.location.href = "/indexAdmin"</script>');  
-        }).catch(() => {
-            res.status(404);
-            res.send('<script>alert("Não existe suegstão!"); window.location.href = "/indexAdmin"</script>');
-        })
-    }
-
-} else {
-    res.status(404);
-    res.send('<script>alert("Não existe suegstão!"); window.location.href = "/indexAdmin"</script>');
-
-}
-})
 
 
 router.get('/perfil/:id', adminAuth.authenticate, (req, res) => {

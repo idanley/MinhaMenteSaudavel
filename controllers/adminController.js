@@ -5,7 +5,11 @@ const Paciente = require('../models/Paciente');
 
 
 router.get('/indexAdmin', (req, res) => {
-    res.render('indexAdmin')
+
+    sugestoes.findAll({ raw: true }).then((sugestoes) => {
+        res.render('indexAdmin', {sugestoes: sugestoes,}); 
+    });  
+
 })
 
 router.get('/usuarios', (req, res) => {
@@ -13,6 +17,7 @@ router.get('/usuarios', (req, res) => {
     Paciente.findAll({ raw: true }).then(users => {
         res.render('usuarios', { users: users })
     })
+  
 
 })
 
@@ -98,6 +103,33 @@ router.post('/delete', (req, res) => {
     
     }
 
+})
+
+router.post('/deleteSugestoes', (req, res) => {
+    let Id = req.body.id;
+
+if(Id != undefined) {
+
+    if(!isNaN(Id)) {
+
+        sugestoes.destroy({
+            where:{
+                id: Id
+            }
+        }).then(() => {
+            res.status(200);
+            res.send('<script>alert("Sugestão removida!"); window.location.href = "/indexAdmin"</script>');  
+        }).catch(() => {
+            res.status(404);
+            res.send('<script>alert("Não existe suegstão!"); window.location.href = "/indexAdmin"</script>');
+        })
+    }
+
+} else {
+    res.status(404);
+    res.send('<script>alert("Não existe suegstão!"); window.location.href = "/indexAdmin"</script>');
+
+}
 })
 
 
