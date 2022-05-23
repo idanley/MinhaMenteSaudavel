@@ -2,7 +2,13 @@ const express = require('express');
 const router = express.Router();
 const sugestoes = require('../models/Sugestoes');
 const Paciente = require('../models/Paciente');
+const bcrypt = require('bcryptjs');
 
+
+router.get('/novasenha', (req, res) => {
+        res.render('novasenha')
+
+})
 
 router.get('/indexAdmin', (req, res) => {
 
@@ -117,7 +123,7 @@ if(Id != undefined) {
                 id: Id
             }
         }).then(() => {
-            res.status(200);
+           
             res.send('<script>alert("Sugestão removida!"); window.location.href = "/indexAdmin"</script>');  
         }).catch(() => {
             res.status(404);
@@ -131,6 +137,34 @@ if(Id != undefined) {
 
 }
 })
+
+router.post('/trocarsenha', (req, res) => {
+
+    let Cpf = req.body.Cpf;
+    let nome = req.body.nome;
+    let Nascimento = req.body.Nascimento;
+    let Senha = req.body.Senha;
+    let salt = bcrypt.genSaltSync(10);
+    let hash = bcrypt.hashSync(Senha, salt);
+    
+    Paciente.findOne({ where: { cpf:Cpf,
+        nome:nome,
+        nascimento: Nascimento
+     } }).then(user => {
+        if (user !== undefined && user!== null && user !== ''){
+
+            Paciente.update({ senha: hash}, {
+                where: {
+                    cpf: Cpf
+                }
+                }) 
+                res.send('<script> alert("Senha alterada com sucesso!"); window.location.href = "/"</script>');
+        } else {
+        res.send('<script> alert("Seus Dados estão incorretos !"); window.location.href = "/novasenha"</script>');
+    }
+
+});
+});
 
 
 

@@ -9,6 +9,7 @@ router.get('/cadastro', (rq, res) => {
 
 router.post('/cadastro/save', (req, res) => {
     let nome = req.body.nome;
+    let Nascimento = req.body.Nascimento;
     let email = req.body.email;
     let senha = req.body.senha;
     let confirmSenha = req.body.confirmSenha
@@ -30,6 +31,7 @@ router.post('/cadastro/save', (req, res) => {
     Paciente.create({
         nome: nome,
         email: email,
+        nascimento: Nascimento,
         senha: hash,
         cnpj: cnpj,
         matricula: matricula,

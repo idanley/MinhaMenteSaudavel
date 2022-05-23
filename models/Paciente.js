@@ -7,6 +7,10 @@ const Paciente = connection.define('users', {
         type: Sequelize.STRING,
               allowNull: false
     },
+    nascimento: { 
+        type: Sequelize.STRING,
+              allowNull: false
+    },
     email: { 
         type: Sequelize.STRING,
               allowNull: false

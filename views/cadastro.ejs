@@ -18,7 +18,7 @@
 
   <nav style="height: 140px;" class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="/logout">
-      <img src="../../img/logo.png" style="width: 50px; height: 35px; margin-left: 10px;" alt=""> <label style="cursor: pointer; border-bottom: 1px solid rgb(120, 224, 231);">Minha mente saudável V. 2.2.2</label>
+      <img src="../../img/logo.png" style="width: 50px; height: 35px; margin-left: 10px;" alt=""> <label style="cursor: pointer; border-bottom: 1px solid rgb(120, 224, 231);">Minha mente saudável V. 2.3.1</label>
     </a>
   </nav>
 
@@ -41,20 +41,24 @@
         <form method="POST" action="/cadastro/save" class="row g-3 form-contato" >
           <div class="col-md-6">
             <label for="inputNome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="inputNome" placeholder="nome completo..." name="nome" autocomplete="off">
+            <input type="text" class="form-control" id="inputNome" placeholder="nome completo..." name="nome" autocomplete="off" required>
           </div>
           <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="ex: abc@gmail.com" name="email" autocomplete="off">
+            <input type="email" class="form-control" id="inputEmail" placeholder="ex: abc@gmail.com" name="email" autocomplete="off"  required>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
+            <label for="nascimento" class="form-label">DATA DE NASCIMENTO</label>
+            <input type="text" class="form-control" id="nascimento" name="Nascimento" autocomplete="off"  required>
+          </div>
+          <div class="col-md-4">
             <label for="inputPassword4" class="form-label">Senha</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="senha..." name="senha" autocomplete="off">
+            <input type="password" class="form-control" id="inputPassword" placeholder="senha..." name="senha" autocomplete="off"  required>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <label for="inputPassword4" class="form-label">Confirmar senha</label>
             <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="confirmar senha..."
-              name="confirmSenha">
+              name="confirmSenha"  required>
           </div>
           <div>
             <input id="Senha" type="checkbox" onclick="opensenha()"> Mostrar Senha
@@ -123,7 +127,7 @@
 
           <div class="col-md-4">
             <label for="inputzip1" class="form-label">CPF</label>
-            <input name="cpf" type="text" class="form-control" placeholder="000.000.000-00" id="inputZip1">
+            <input name="cpf" type="text" class="form-control" placeholder="000.000.000-00" id="inputZip1"  required>
           </div>
 
           <div class="col-md-4">

@@ -7,6 +7,7 @@ function openSenha() {
         visual.type = "password"
     }
 
+
 }
 
 

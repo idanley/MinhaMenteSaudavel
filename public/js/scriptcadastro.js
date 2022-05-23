@@ -95,4 +95,6 @@ function user(user) {
     $('#cnpj').mask('00.000.000/0000-00', { reverse: false });
     $('#inputZip').mask('00000', { reverse: false });
     $('#inputzip2').mask('00000', { reverse: false });
+    $('#nascimento').mask('00/00/0000', { reverse: true });
   });
+

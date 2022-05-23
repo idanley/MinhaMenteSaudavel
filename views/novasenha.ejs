@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/cadastro.css">
+
+  <nav style="height: 140px;" class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="/logout">
+      <img src="../../img/logo.png" style="width: 50px; height: 35px; margin-left: 10px;" alt=""> <label style="cursor: pointer; border-bottom: 1px solid rgb(120, 224, 231);">Minha mente saudável V. 2.3.1</label>
+    </a>
+  </nav>
+
+  <title>Mente Saudável</title>
+
+<body>
+  <div class="container col-9">
+    <div id="iner" class="card card-header">
+      <h3 style="color: #fff; font-weight: 600;">Para obter uma Nova Senha voçê precisa preencher corretamente seus Dados  </h3>
+      <div class="" style="display: flex; justify-content: center;">
+        <i class="bi bi-person fs-1" style="color: #fff;"></i>
+      </div>
+      <div>
+      </div>
+      <div class="card card-body needs-validation">
+        <form method="POST" action="/trocarsenha" class="row g-3 form-contato" >
+          <div class="col-md-4">
+            <label for="inputNome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="inputNome" placeholder="nome completo..." name="nome" autocomplete="off">
+          </div>
+          <div class="col-md-4">
+            <label for="inputZip1" class="form-label">CPF</label>
+            <input type="text" class="form-control" id="inputZip1" name="Cpf" autocomplete="off">
+          </div>
+          <div class="col-md-4">
+            <label for="nascimento" class="form-label">DATA DE NASCIMENTO</label>
+            <input type="text" class="form-control" id="nascimento" name="Nascimento" autocomplete="off">
+          </div>
+          <div class="col-md-4">
+            <label for="inputPassword4" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="inputPassword1" placeholder="senha..." name="Senha" autocomplete="off">
+          </div>
+          <div class="col-md-4">
+            <label for="inputPassword4" class="form-label">Confirmar senha</label>
+            <input type="password" class="form-control" id="inputPasswordConfirm1" placeholder="confirmar senha..."
+              name="confirmSenha">
+          </div>
+          <div>
+            <input id="Senha" type="checkbox" onclick="OpenSenha()"> Mostrar Senha
+          </div>
+          <div class="d-grid gap-2 col-4 mx-auto">
+            <button type="submit" class="btn btn-primary">Atualizar senha</button>
+          </div>
+        </form>
+        <div>
+          <a class="btn btn-dark btn-sm text-white col-2" href="/">Voltar</a>
+        </div>
+        <br>
+      </div>
+    </div>
+</body>
+
+
+
+    <!-- SCRIPTS  -->
+   <!-- SCRIPTS  -->
+   <script type="text/javascript" src="/js/scriptTrocarSenha.js"></script>
+   <script type="text/javascript" src="/js/jquery.mask.js"></script>
+   
+  
+
+</html>

@@ -1,101 +1,105 @@
 <%- include('partials/header') %>
-<nav style="height: 130px;" class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="/logout">
-      <img src="../../img/logo.png" style="width: 55px; height: 55px; margin-left: 10px;" alt="">
-      <label style="cursor: pointer; border-bottom: 1px solid rgb(120, 224, 231);">Minha mente saudável V. 2.2.2</label>
-    </a>
-  </nav>
-<link rel="stylesheet" href="css/login.css">
+    <nav style="height: 130px;" class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/logout">
+            <img src="../../img/logo.png" style="width: 55px; height: 55px; margin-left: 10px;" alt="">
+            <label style="cursor: pointer; border-bottom: 1px solid rgb(120, 224, 231);">Minha mente saudável V.
+                2.3.1</label>
+        </a>
+    </nav>
+    <link rel="stylesheet" href="css/login.css">
 
-        <body>
-            <div class="container div-father">
-                <div class=" container col-8">
-                    <hr>
-                    <div class="info-idoso">
-                        <img src="/img/idoso.webp" width="50%" height="50%" alt="idoso">
-                        <a style="text-decoration: none;"
-                            href="https://saude.abril.com.br/mente-saudavel/os-fatores-de-risco-e-sinais-para-evitar-o-suicidio-entre-idosos/">
-                            <div class="info">
-                                <label style="color: rgb(241, 89, 89); font-size: 15px; font-weight: 600;">Mente
-                                    Saudável</label>
-                                <h3 style="color: rgb(88, 88, 88)">Os fatores de risco e sinais para evitar o suicídio
-                                    entre idosos</h3>
-                                <p style="font-size: 13px; color:rgb(88, 88, 88) ;">Por Cristiane Santos, da Agência
-                                    Einstein* 16 set 2021, 12h11</p>
-                            </div>
-                        </a>
-                    </div>
-                    <hr>
-                    <div class="info-idoso">
-                        <img src="/img/saude.webp" width="50.5%" height="55%" alt="saúde">
-                        <a style="text-decoration: none;"
-                            href="https://saude.abril.com.br/blog/saude-e-pop/musica-faz-bem-a-saude-neurocientista-e-compositora-responde/">
-                            <div class="info">
-                                <label style="color: rgb(241, 89, 89); font-size: 15px; font-weight: 600;">Mente
-                                    Saudável</label>
-                                <h3 style="color: rgb(88, 88, 88)">
-                                    Música faz bem à saúde? Neurocientista e compositora responde</h3>
-                                <p style="font-size: 13px; color:rgb(88, 88, 88) ;">Por Saúde é pop | 9 set 2021, 17h29
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <hr>
-                    <div class="info-idoso">
-                        <img src="/img/rede.webp" width="50%" height="50%" alt="rede">
-                        <a style="text-decoration: none;"
-                            href="https://saude.abril.com.br/mente-saudavel/desvalorizar-o-tempo-de-lazer-pode-fazer-mal-para-a-saude-mental/">
-                            <div class="info">
-                                <label style="color: rgb(241, 89, 89); font-size: 15px; font-weight: 600;">Mente
-                                    Saudável</label>
-                                <h3 style="color: rgb(88, 88, 88)">Desvalorizar o tempo de lazer pode fazer mal para a
-                                    saúde mental</h3>
-                                <p style="font-size: 13px; color:rgb(88, 88, 88) ;">Por Priscila Carvalho, da Agência
-                                    Einstein* 8 set 2021, 14h17 </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="container col-6 login">
-                    <div id="iner" class="card card-header">
-                        <h3 style="color: #fff; font-weight: 600;">Login</h3>
-                        <div style="display: flex; justify-content: center;">
-                            <i class="bi bi-person fs-1" style="color: #fff;"></i>
+    <body>
+        <div class="container div-father">
+            <div class=" container col-8">
+                <hr>
+                <div class="info-idoso">
+                    <img src="/img/idoso.webp" width="50%" height="50%" alt="idoso">
+                    <a style="text-decoration: none;"
+                        href="https://saude.abril.com.br/mente-saudavel/os-fatores-de-risco-e-sinais-para-evitar-o-suicidio-entre-idosos/">
+                        <div class="info">
+                            <label style="color: rgb(241, 89, 89); font-size: 15px; font-weight: 600;">Mente
+                                Saudável</label>
+                            <h3 style="color: rgb(88, 88, 88)">Os fatores de risco e sinais para evitar o suicídio
+                                entre idosos</h3>
+                            <p style="font-size: 13px; color:rgb(88, 88, 88) ;">Por Cristiane Santos, da Agência
+                                Einstein* 16 set 2021, 12h11</p>
                         </div>
-                    </div>
-                    <div class="card card-body">
-                        <form method="POST" action="/authenticate">
-                            <div class="lg">
-                                <label for="login"><strong>Email</label>
-                                <input name="lemail" id="login" class="form-control" placeholder="Digite seu E-mail" />
-                            </div>
-                            <br>
-                            <div class="se">
-                                <label for="senha">Senha</label>
-                                <input name="lsenha" type="password" id="senha" class="form-control"
-                                    placeholder="Digite sua de senha" />
-                            </div><br>
-                            <div>
-                                <input id="Senha" type="checkbox" onclick="openSenha()"> Mostrar Senha
-                            </div>
-                            <br>
-                            <div class="buttons">
-                                <div class="btn-logar">
-                                    <button type="submit" class="btn btn-primary btn-lg">Logar</button>
-                                </div>
-                                <div class="cadastre-se">
-                                    <a href="/cadastro" class="btn btn-primary btn-lg">Cadastrar</a>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div>
+                    </a>
+                </div>
+                <hr>
+                <div class="info-idoso">
+                    <img src="/img/saude.webp" width="50.5%" height="55%" alt="saúde">
+                    <a style="text-decoration: none;"
+                        href="https://saude.abril.com.br/blog/saude-e-pop/musica-faz-bem-a-saude-neurocientista-e-compositora-responde/">
+                        <div class="info">
+                            <label style="color: rgb(241, 89, 89); font-size: 15px; font-weight: 600;">Mente
+                                Saudável</label>
+                            <h3 style="color: rgb(88, 88, 88)">
+                                Música faz bem à saúde? Neurocientista e compositora responde</h3>
+                            <p style="font-size: 13px; color:rgb(88, 88, 88) ;">Por Saúde é pop | 9 set 2021, 17h29
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <hr>
+                <div class="info-idoso">
+                    <img src="/img/rede.webp" width="50%" height="50%" alt="rede">
+                    <a style="text-decoration: none;"
+                        href="https://saude.abril.com.br/mente-saudavel/desvalorizar-o-tempo-de-lazer-pode-fazer-mal-para-a-saude-mental/">
+                        <div class="info">
+                            <label style="color: rgb(241, 89, 89); font-size: 15px; font-weight: 600;">Mente
+                                Saudável</label>
+                            <h3 style="color: rgb(88, 88, 88)">Desvalorizar o tempo de lazer pode fazer mal para a
+                                saúde mental</h3>
+                            <p style="font-size: 13px; color:rgb(88, 88, 88) ;">Por Priscila Carvalho, da Agência
+                                Einstein* 8 set 2021, 14h17 </p>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <hr>
-            <!-- mostrar senha -->
-            <script type="text/javascript" src="js/scriptLogin.js">
-            </script>
-        </body>
+            <div class="container col-6 login">
+                <div id="iner" class="card card-header">
+                    <h3 style="color: #fff; font-weight: 600;">Login</h3>
+                    <div style="display: flex; justify-content: center;">
+                        <i class="bi bi-person fs-1" style="color: #fff;"></i>
+                    </div>
+                </div>
+                <div class="card card-body">
+                    <form method="POST" action="/authenticate">
+                        <div class="lg">
+                            <label for="login"><strong>Email</label>
+                            <input name="lemail" id="login" class="form-control" placeholder="Digite seu E-mail" />
+                        </div>
+                        <br>
+                        <div class="se">
+                            <label for="senha">Senha</label>
+                            <input name="lsenha" type="password" id="senha" class="form-control"
+                                placeholder="Digite sua de senha" />
+                        </div><br>
+                        <div>
+                            <input id="Senha" type="checkbox" onclick="openSenha()"> Mostrar Senha
+                        </div>
+                        <br>
+                        <div class="buttons">
+                            <div class="btn-logar">
+                                <button type="submit" class="btn btn-primary btn-lg">Logar</button>
+                            </div>
+                            <div class="cadastre-se">
+                                <a href="/cadastro" class="btn btn-primary btn-lg">Cadastrar</a>
+                            </div>
 
-        </html>
+                        </div>
+                    </form>
+                    <a href="/novasenha" >Esqueci minha senha</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <!-- mostrar senha -->
+        <script type="text/javascript" src="js/scriptLogin.js"> </script>
+
+
+    </body>
+    
+    </html>
